@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Luna Idle
+      name: NPC Portrait_0
       rect:
         serializedVersion: 2
         x: 0
@@ -148,20 +148,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e8cbec21ad9a5146a6399e187f79581
-      internalID: 21300000
+      spriteID: 598522016fccfe04fb344d827bbd75ca
+      internalID: 636979459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Talk
+      name: NPC Portrait_1
       rect:
         serializedVersion: 2
         x: 35
@@ -169,20 +169,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d10d1fb6ab8887743bcc7bd68c6741db
-      internalID: 21300002
+      spriteID: c72b98b011e2b7f449825f79ede21c7a
+      internalID: 1574536855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Smile
+      name: NPC Portrait_2
       rect:
         serializedVersion: 2
         x: 70
@@ -190,20 +190,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d0300f67d92ace47949343e5fdd231c
-      internalID: 21300004
+      spriteID: bfd9cc7ba734b42428c5f5e0eeb078cd
+      internalID: 1240058057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna Angry
+      name: NPC Portrait_3
       rect:
         serializedVersion: 2
         x: 105
@@ -211,20 +211,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b3732da275df34fbc4cb7c50f9cedb
-      internalID: 21300006
+      spriteID: 3cc124154effda84398da2a31d547393
+      internalID: 510754549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Idle
+      name: NPC Portrait_4
       rect:
         serializedVersion: 2
         x: 0
@@ -232,20 +232,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4843ffde443d13441982a64d625783d1
-      internalID: 21300008
+      spriteID: c417d6abc75715e458b85784dd5033e6
+      internalID: -1935003076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Talk
+      name: NPC Portrait_5
       rect:
         serializedVersion: 2
         x: 35
@@ -253,20 +253,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e21efaca3ed60ec4ea3bae9cada96e5d
-      internalID: 21300010
+      spriteID: 0946d546faf679549a3cdb5a43732db5
+      internalID: -1962852058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Smile
+      name: NPC Portrait_6
       rect:
         serializedVersion: 2
         x: 70
@@ -274,20 +274,20 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5659a6b8893ed4c4d81d88ec467912bf
-      internalID: 21300012
+      spriteID: d94f5a77dd19c51479d235afbbcf1e00
+      internalID: 1863231452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo Angry
+      name: NPC Portrait_7
       rect:
         serializedVersion: 2
         x: 105
@@ -295,14 +295,14 @@ TextureImporter:
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dc061a7811deba4d9b619fc30822d12
-      internalID: 21300014
+      spriteID: 2b8de6a6f56227a4d9b74caa23205429
+      internalID: 916503022
       vertices: []
       indices: 
       edges: []
@@ -318,14 +318,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ludo Talk: 21300010
-      Luna Idle: 21300000
-      Luna Angry: 21300006
-      Luna Talk: 21300002
-      Ludo Idle: 21300008
-      Ludo Smile: 21300012
-      Luna Smile: 21300004
-      Ludo Angry: 21300014
+      NPC Portrait_0: 636979459
+      NPC Portrait_1: 1574536855
+      NPC Portrait_2: 1240058057
+      NPC Portrait_5: -1962852058
+      NPC Portrait_6: 1863231452
+      NPC Portrait_7: 916503022
+      NPC Portrait_3: 510754549
+      NPC Portrait_4: -1935003076
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

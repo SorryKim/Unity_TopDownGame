@@ -11,6 +11,7 @@ public class PlayerAction : MonoBehaviour
     Animator anim;
     Vector3 dirVec;
     GameObject scanObject;
+    public Manager manager;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,14 +24,14 @@ public class PlayerAction : MonoBehaviour
     void Update()
     {
         // Move value
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+        h = manager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+        v = manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
 
         // 대각선 이동을 제한하여 상하좌우로만 이동을 가능하게 함
-        bool hDown = Input.GetButtonDown("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
-        bool hUp = Input.GetButtonUp("Horizontal");
-        bool vUp = Input.GetButtonUp("Vertical");
+        bool hDown = manager.isAction ? false : Input.GetButtonDown("Horizontal");
+        bool vDown = manager.isAction ? false : Input.GetButtonDown("Vertical");
+        bool hUp = manager.isAction ? false : Input.GetButtonUp("Horizontal");
+        bool vUp = manager.isAction ? false : Input.GetButtonUp("Vertical");
 
         // Check Horizontal Move
         if (hDown)
@@ -68,7 +69,7 @@ public class PlayerAction : MonoBehaviour
 
         // Scan Object
         if (Input.GetButtonDown("Jump") && scanObject != null) {
-            Debug.Log("this is :" + scanObject.name);
+            manager.Action(scanObject);
         }
 
     }
@@ -80,8 +81,8 @@ public class PlayerAction : MonoBehaviour
         rigid.velocity = moveVec * Speed;
 
         // Ray
-        Debug.DrawRay(rigid.position, dirVec * 0.7f, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, 0.7f, LayerMask.GetMask("Object"));
+        Debug.DrawRay(rigid.position, dirVec * 0.8f, new Color(0, 1, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, 0.8f, LayerMask.GetMask("Object"));
 
         if(rayHit.collider != null)
         {
