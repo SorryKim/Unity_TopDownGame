@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Manager : MonoBehaviour
 {
     public TalkManager talkManager;
+    public QuestManager questManager;
     public Text talkText;
     public GameObject scanObject;
     public GameObject talkPanel;
@@ -13,9 +14,12 @@ public class Manager : MonoBehaviour
     public int talkIndex;
     public Image portraitImg;
 
+    private void Start()
+    {
+        Debug.Log(questManager.CheckQuest());
+    }
     public void Action(GameObject scanObj)
     {
-
         isAction = true;
         scanObject = scanObj;
         ObjectData objData = scanObject.GetComponent<ObjectData>();
@@ -26,15 +30,20 @@ public class Manager : MonoBehaviour
 
     void Talk(int id, bool isNpc)
     {
-        string talkData = talkManager.GetTalk(id, talkIndex);
+        // Set Talk data
+        int questTalkIndex = questManager.GetQuestTalkIndex(id);
+        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
 
+        // End talk
         if(talkData == null)
         {
             isAction = false;
             talkIndex = 0;
+            Debug.Log(questManager.CheckQuest(id));
             return;
         }
 
+        // Continue Talk
         if (isNpc)
         {
             talkText.text = talkData.Split(':')[0];
