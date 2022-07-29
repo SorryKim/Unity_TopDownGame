@@ -7,12 +7,14 @@ public class Manager : MonoBehaviour
 {
     public TalkManager talkManager;
     public QuestManager questManager;
-    public Text talkText;
+    public TypeEffect talkText;
     public GameObject scanObject;
-    public GameObject talkPanel;
+    public Animator talkPanel;
     public bool isAction;
     public int talkIndex;
     public Image portraitImg;
+    public Animator portraitAnim;
+    public Sprite prevPortrait;
 
     private void Start()
     {
@@ -20,19 +22,31 @@ public class Manager : MonoBehaviour
     }
     public void Action(GameObject scanObj)
     {
+        // Get Current Object
         isAction = true;
         scanObject = scanObj;
         ObjectData objData = scanObject.GetComponent<ObjectData>();
         Talk(objData.id, objData.isNpc);
 
-        talkPanel.SetActive(isAction);
+        // Visible Talk for Action
+        talkPanel.SetBool("isShow", isAction);
     }
 
     void Talk(int id, bool isNpc)
     {
         // Set Talk data
-        int questTalkIndex = questManager.GetQuestTalkIndex(id);
-        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+        int questTalkIndex = 0;
+        string talkData = "";
+
+        if (talkText.isAnimation)
+        {
+            talkText.SetMsg("");
+            return;
+        }
+        else {
+            questTalkIndex = questManager.GetQuestTalkIndex(id);
+            talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+        }
 
         // End talk
         if(talkData == null)
@@ -46,15 +60,23 @@ public class Manager : MonoBehaviour
         // Continue Talk
         if (isNpc)
         {
-            talkText.text = talkData.Split(':')[0];
+            talkText.SetMsg(talkData.Split(':')[0]);
 
-            portraitImg.sprite = talkManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
+            // Show portrait
+            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1, 1, 1, 1);
+            if (prevPortrait != portraitImg.sprite)
+            {
+                portraitAnim.SetTrigger("doEffect");
+                prevPortrait = portraitImg.sprite;
+            }
         }
         else
         {
-            talkText.text = talkData;
+            talkText.SetMsg(talkData);
+            // Hide portrait
             portraitImg.color = new Color(1, 1, 1, 0);
+
         }
 
         isAction = true;
